@@ -363,12 +363,17 @@ Variables are assembled into a $997 \times 5$ matrix $\textbf{Y}$ and Principal 
 	\end{split}
 \end{equation}where \textbf{W} is a $5 \times 5$ matrix that contain the eigenvectors of the matrix $\textbf{Y}^{T}\textbf{Y}$.  Since the resulting columns of $\textbf{Y}^{\text{rot}}$ are formed from the eigenvectors, they are uncorrelated with each other by construction.
 
-The columns of the rotated data matrix $\textbf{Y}^{\text{rot}}$ (and thus columns of \textbf{W}) represent the data dimensions that successively capture the most variance of the original data.  In other words, the first eigenvector given in the first column of
+The columns of \textbf{W} represent the data dimensions that successively capture the most variance of the original data.  In other words, the first eigenvector contained in the first column of \textbf{W} is the first principal component.  Along this dimension, the original data contained in \textbf{Y} \textit{varies the most}.  When the data is projected onto \textbf{W}, we obtain $\textbf{Y}^{\text{rot}}$.  The first column in this rotated data is our univariate variable of interest. It corresponds to the original data rotated onto the first principal component.  Analogously, it is a linear combination of the original five dependent variables.
+
+The significance of this procedure is its production of a univariate variable from the original five measures of financial literacy that preserves \textit{as much information as possible} (in terms of variance).  In the subsequent analysis, we use this univariate variable -- taken from the first column of $\textbf{Y}^{\text{rot}}$ -- as our dependent variable.
+
+Since this variable is intended to serve as our measure of financial literacy for each observation in our data set, we can look at the values it takes on in light of the original five financial literacy questions.  Figure \ref{dep1} 
 
 \begin{figure}[H]
 \centering
 \caption{Values of the economic outcome index separated by answers to original financial outcome questions.}
 	\centerline{\includegraphics[scale=1.2]{biplots.pdf}}
+	\label{dep1}
 \end{figure}
 
 
